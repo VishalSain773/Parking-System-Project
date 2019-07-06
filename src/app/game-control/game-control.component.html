@@ -1,0 +1,82 @@
+<!-- <div>
+  <h1>
+    Parking System
+  </h1>
+  <div style="
+height: 200px;
+width: fit-content;
+">
+  <h1 id="randomNumberTag">
+    {{ randomNumber }}
+  </h1>
+  <button
+    class="btn btn-success"
+    style="margin-right: 2%"
+    data-toggle="modal" data-target="#myModal"
+  >
+    Park a Vehicle
+  </button>
+
+  <button class="btn btn-danger" style="margin-right: 2%" (click)="stopNumbersEmitting()">
+    Remove a Vehicle
+  </button>
+
+  <button class="btn btn-primary" style="margin: 2%" (click)="stopNumbersEmitting()">
+    View Available Parking slots
+  </button>
+  <app-detail-modal></app-detail-modal>
+</div>
+
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Enter the Vehicle number</h2>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <input type="number"
+            onInput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+            maxlength = "4" 
+            #vehicleNumber/>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" (click)="parkingVehicle(vehicleNumber)">Ok</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+<div>
+<h1 style="color: white;
+font-family: cursive;">Parking System</h1>
+</div>
+<div class="row">
+  <div class="col-xl-8 parkingSlots">
+    <div>
+      <img
+        *ngFor="let slot of availableSlots"
+        [src]=" slot.booked ?   '../../assets/images/parked.png' : '../../assets/images/caricon2.png'"
+        [ngClass]="slot.booked ?  'booked slot' : 'available slot' "
+        (click)="checkInOut(slot.slotNumber)"
+      >
+        <!-- {{ slot.slotNumber }} -->
+      <!-- </button> -->
+    </div>
+  </div>
+  <div class="col-xl-3 checkInOut">
+    <button class="btn btn-primary" style="margin: 2%" (click)="checkIn = true">
+      Check In
+    </button>
+    <button
+      class="btn btn-danger"
+      style="margin: 2%"
+      (click)="checkIn = false"
+    >
+      Check Out
+    </button>
+    <app-check-in *ngIf="checkIn" [availableSlots]="availableSlots" [(slotNumber)]="slotNumber" (updateAvailableSlots)="updateAvailableSlots($event)"></app-check-in>
+    <app-check-out *ngIf="!checkIn" (updateAvailableSlots)="updateAvailableSlots($event)"></app-check-out>
+  </div>
+</div>

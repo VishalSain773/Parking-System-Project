@@ -1,0 +1,38 @@
+.parkingSlots{
+    height: 550px;
+    padding: 19px;
+    text-align: justify;
+    display: flex;
+    border: 1px solid gray;
+    margin: 0px 24px;
+}
+.checkInOut{
+    border: 1px solid gray;
+    height: 550px;
+}
+.booked {
+    height: 118px;
+    width: 118px;
+    margin: 25px;
+    /* background-color: rgb(255, 0, 0); */
+    /* color: white; */
+  }
+.available {
+    height: 100px;
+    width: 100px;
+    margin: 36px;
+    /* background-color: rgb(75, 182, 84); */
+}
+.slot {
+    border: none;
+    
+    position: relative;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+.parkedImage{
+    position: absolute;
+    top: 60px;
+    left: 80px;
+}

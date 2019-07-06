@@ -1,0 +1,48 @@
+<div>
+  <label style="    color: white;
+  font-size: larger;
+  font-family: cursive;">Please enter the vehicle number</label>
+  <input
+    type="number"
+    id="vehicleNumber"
+    name="vehicleNumber"
+    placeholder="Enter vehicle number"
+    onInput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+    maxlength="4"
+    minlength="4"
+    #vehicleNumber
+  />
+  <button class="checkOutButton" data-toggle="modal" data-target="#myModal">
+    Check Out
+  </button>
+</div>
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Checkout Details</h3>
+        <button type="button" class="close" data-dismiss="modal">
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <label>Slot Number : {{slotNumber}}</label><br/>
+        <label>Total parking fare : {{parkingFare}}</label>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-default"
+          data-dismiss="modal"
+          (click) = "checkOut(vehicleNumber.value)"
+        >
+          Ok
+        </button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
