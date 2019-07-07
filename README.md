@@ -10,7 +10,7 @@ will tell you the cost for the parking once checked out at 1Rs/ per minute
 
 ## How to run the code :- 
 1. Clone the repository in your local using `git clone https://github.com/VishalSain773/Parking-System-Project.git.`
-2. Now install mongoDb+robo 3t in you system and start the mongo db server by typing mongod in command prompt.
+2. Now install mongoDb+robo 3t in your system and start the mongo db server by typing mongod in command prompt.
 > (Note: Make sure to set the enviornment variables path for mongoDB. If your mongoDB server is not starting please go to your C:/ drive and create a folder data/db)
 3. As the mongoDb server is running now open robo3T and create a new database with the name of "parkinglotrepo"(all small cases).
 4. Inside parkinglotrepo create a new collection using right click<create collection. Name this new collection as SlotFlag(Please take care of the camelcase).
