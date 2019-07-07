@@ -17,11 +17,11 @@ will tell you the cost for the parking once checked out at 1Rs/ per minute
 5. Inside SlotFlag add data in the following form:- 
 
 ## SlotFlag data should be like :- 
-i.
+1.
 -  {  "slotNumber" : "1",
 -    "booked" : false,
 -    "_class" : "com.vishal.parkinglot.jsonobject.SlotFlag" }
-ii.
+2.
 -  {  "slotNumber" : "2",
 -    "booked" : false,
 -    "_class" : "com.vishal.parkinglot.jsonobject.SlotFlag" }
