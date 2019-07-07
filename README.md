@@ -16,8 +16,12 @@ will tell you the cost for the parking once checked out at 1Rs/ per minute
 4. Inside parkinglotrepo create a new collection using right click<create collection. Name this new collection as SlotFlag(Please take care of the camelcase).
 5. Inside SlotFlag add data in the following form:- 
 
-
--  {  "slotNumber" : "1", <-------- create as many  slots as you want.
+/*1*/
+-  {  "slotNumber" : "1",
+-    "booked" : false,
+-    "_class" : "com.vishal.parkinglot.jsonobject.SlotFlag" }
+/*2*/
+-  {  "slotNumber" : "2",
 -    "booked" : false,
 -    "_class" : "com.vishal.parkinglot.jsonobject.SlotFlag" }
 
@@ -26,7 +30,7 @@ will tell you the cost for the parking once checked out at 1Rs/ per minute
 6. Open the service code and in the command prompt run `gradle build` (make sure to use gradle version 4.4 or above).
 7. Run the jar file in service/build/libs using `java -jar 'Jar File Name'`(use TAB in cmd for auto insert the file name).
 
-**GOOD! Now you service code is running and now its time to run the front end.**
+**GOOD! Now your service code is running and now its time to run the front end.**
 
 8. Open the UI folder and in the command prompt run `npm install` which will install the node modules.
 9. Now FINALLY run `ng serve` to start the front end server
