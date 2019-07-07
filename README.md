@@ -16,11 +16,12 @@ will tell you the cost for the parking once checked out at 1Rs/ per minute
 4. Inside parkinglotrepo create a new collection using right click<create collection. Name this new collection as SlotFlag(Please take care of the camelcase).
 5. Inside SlotFlag add data in the following form:- 
 
-/*1*/
+## SlotFlag data should be like :- 
+i.
 -  {  "slotNumber" : "1",
 -    "booked" : false,
 -    "_class" : "com.vishal.parkinglot.jsonobject.SlotFlag" }
-/*2*/
+ii.
 -  {  "slotNumber" : "2",
 -    "booked" : false,
 -    "_class" : "com.vishal.parkinglot.jsonobject.SlotFlag" }
