@@ -28,7 +28,7 @@ export class CheckOutComponent implements OnInit {
   }
 
   checkOut(vehicleNumber) {
-    console.log("Fair Paid", vehicleNumber);
+
     if (vehicleNumber.length != 0) {
       let localData: any;
       this.parkingService.checkOut(vehicleNumber).subscribe(data => {
@@ -36,10 +36,16 @@ export class CheckOutComponent implements OnInit {
         this.parkingFare = localData.money;
         this.slotNumber = localData.slotNo;
       });
-      this.parkingService.fairPaid(vehicleNumber).subscribe(data => {
-        console.log(data);
-      });
       this.updateSlots();
+      vehicleNumber = "";
     }
   }
+
+  isMoneyPaid(vehicleNumber) {
+    this.parkingService.fairPaid(vehicleNumber).subscribe(data => {
+      console.log(data);
+    });
+    this.updateSlots();
+  }
+  
 }

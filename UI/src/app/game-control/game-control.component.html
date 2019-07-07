@@ -50,7 +50,7 @@ width: fit-content;
 </div> -->
 <div>
 <h1 style="color: white;
-font-family: cursive;">Parking System</h1>
+font-family: cursive;">TechPrimeLab Parking System</h1>
 </div>
 <div class="row">
   <div class="col-xl-8 parkingSlots">
@@ -60,6 +60,7 @@ font-family: cursive;">Parking System</h1>
         [src]=" slot.booked ?   '../../assets/images/parked.png' : '../../assets/images/caricon2.png'"
         [ngClass]="slot.booked ?  'booked slot' : 'available slot' "
         (click)="checkInOut(slot.slotNumber)"
+        tabindex="1"
       >
         <!-- {{ slot.slotNumber }} -->
       <!-- </button> -->

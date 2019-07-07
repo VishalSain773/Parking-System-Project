@@ -41,19 +41,23 @@ export class CheckInComponent implements OnInit {
 
   checkIn(vehicleNumber) {
     let emptySlot;
-    this.getParkedCars();
-    console.log(this.parkedCarsList);
+    // this.getParkedCars();
+    // console.log(this.parkedCarsList);
     if(this.slotNumber != undefined && vehicleNumber.length !=  0 && !(this.parkedCarsList.some(e => e == vehicleNumber)) ) {
       this.parkingService.checkIn(this.slotNumber,vehicleNumber).subscribe((data) => {
         this.updateAvailableSlots.emit(data);
+        this.getParkedCars();
         this.updateSlots()
+        vehicleNumber = "";
       })
     } else if (this.slotNumber == undefined && vehicleNumber.length !=  0 && !(this.parkedCarsList.some(e => e == vehicleNumber))) {
       emptySlot = this.availableSlots.filter(x => x.booked == false)[0].slotNumber
       console.log(emptySlot);
       this.parkingService.checkIn(emptySlot,vehicleNumber).subscribe((data) => {
         this.updateAvailableSlots.emit(data);
+        this.getParkedCars();
         this.updateSlots()
+        vehicleNumber = "";
       })
     } else if ( this.parkedCarsList.some(e => e == vehicleNumber)) {
       alert("This vehicle is already parked! Please check out first")

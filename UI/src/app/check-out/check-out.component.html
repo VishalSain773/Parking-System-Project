@@ -12,7 +12,7 @@
     minlength="4"
     #vehicleNumber
   />
-  <button class="checkOutButton" data-toggle="modal" data-target="#myModal">
+  <button class="checkOutButton" data-toggle="modal" data-target="#myModal" (click) = "checkOut(vehicleNumber.value)">
     Check Out
   </button>
 </div>
@@ -35,7 +35,7 @@
           type="button"
           class="btn btn-default"
           data-dismiss="modal"
-          (click) = "checkOut(vehicleNumber.value)"
+          (click) = "isMoneyPaid(vehicleNumber.value)"
         >
           Ok
         </button>
